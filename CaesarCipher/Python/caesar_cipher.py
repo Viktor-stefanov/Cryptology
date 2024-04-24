@@ -7,10 +7,8 @@ def caesar_cipher(plaintext, key):
     cipher_text = []
     for char in plaintext:
         if char.isalpha():
-            if char.islower():
-                char = chr(ord(char) + key) if ord(char) + key <= 122 else chr(ord(char) + key - 26)
-            elif char.isupper():
-                char = chr(ord(char) + key) if ord(char) + key <= 90 else chr(ord(char) + key - 26)
+            shift = 65 if char.isupper() else 97
+            char = chr((ord(char) - shift + key) % 26 + shift)
         cipher_text.append(char)
     
     return "".join(cipher_text)

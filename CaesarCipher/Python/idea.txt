@@ -1,0 +1,1 @@
+1. Add an algorithm which determines if a given text is in a predefined language or not.
